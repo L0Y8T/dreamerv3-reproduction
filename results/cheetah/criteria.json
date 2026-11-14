@@ -1,0 +1,220 @@
+{
+  "generated_at": "2026-11-14T08:33:47+08:00",
+  "generated_by": "table_r2d.py",
+  "task_tag": "dmccr",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "window": 102000.0,
+  "window_rule": "W = max(2000, 预算//5)；前置条件 预算 ≥ 2.5·W",
+  "window_explicit": false,
+  "budget_observed": 510000.0,
+  "sd_ratio_limit": 0.25,
+  "se_multiplier": 2.0,
+  "groups": [
+    {
+      "algo": "dreamer",
+      "members": [
+        {
+          "seed": 0,
+          "file": "dreamer-dmccr-s0.jsonl",
+          "final_step": 500000,
+          "final": 653.6257934570312,
+          "best": 653.6257934570312,
+          "n_eval": 51,
+          "eval_stride": 10016,
+          "git_commit": "",
+          "torch_version": ""
+        },
+        {
+          "seed": 1,
+          "file": "dreamer-dmccr-s1.jsonl",
+          "final_step": 500000,
+          "final": 607.43798828125,
+          "best": 678.9765014648438,
+          "n_eval": 51,
+          "eval_stride": 10016,
+          "git_commit": "",
+          "torch_version": ""
+        },
+        {
+          "seed": 2,
+          "file": "dreamer-dmccr-s2.jsonl",
+          "final_step": 500000,
+          "final": 734.7418823242188,
+          "best": 734.7418823242188,
+          "n_eval": 51,
+          "eval_stride": 10016,
+          "git_commit": "",
+          "torch_version": ""
+        }
+      ]
+    },
+    {
+      "algo": "r2dreamer",
+      "members": [
+        {
+          "seed": 0,
+          "file": "r2dreamer-dmccr-s0.jsonl",
+          "final_step": 500000,
+          "final": 676.8005981445312,
+          "best": 676.8005981445312,
+          "n_eval": 51,
+          "eval_stride": 10016,
+          "git_commit": "",
+          "torch_version": ""
+        },
+        {
+          "seed": 1,
+          "file": "r2dreamer-dmccr-s1.jsonl",
+          "final_step": 500000,
+          "final": 667.3076782226562,
+          "best": 751.9346313476562,
+          "n_eval": 53,
+          "eval_stride": 10016,
+          "git_commit": "",
+          "torch_version": ""
+        },
+        {
+          "seed": 2,
+          "file": "r2dreamer-dmccr-s2.jsonl",
+          "final_step": 500000,
+          "final": 646.3876342773438,
+          "best": 778.5276489257812,
+          "n_eval": 51,
+          "eval_stride": 10016,
+          "git_commit": "",
+          "torch_version": ""
+        }
+      ]
+    }
+  ],
+  "criteria": {
+    "dreamer": {
+      "c1": {
+        "ok": true,
+        "window": 102000.0,
+        "budget": 500000,
+        "n_seeds": 3,
+        "delta_mean": 413.8546596661661,
+        "se": 39.71066919207473,
+        "two_se": 79.42133838414946,
+        "ratio_delta_over_se": 10.421749824068975,
+        "per_seed": [
+          {
+            "seed": 0,
+            "mean_first": 176.79898358204147,
+            "mean_last": 511.3326416015625,
+            "delta": 334.533658019521,
+            "n_first": 11,
+            "n_last": 11
+          },
+          {
+            "seed": 1,
+            "mean_first": 135.33468396826223,
+            "mean_last": 585.3935796564275,
+            "delta": 450.0588956881653,
+            "n_first": 11,
+            "n_last": 11
+          },
+          {
+            "seed": 2,
+            "mean_first": 141.83692431856286,
+            "mean_last": 598.808349609375,
+            "delta": 456.97142529081214,
+            "n_first": 11,
+            "n_last": 11
+          }
+        ],
+        "verdict": "曲线确实在学"
+      },
+      "c2": {
+        "ok": true,
+        "n": 3,
+        "mean": 665.2685546875,
+        "sd": 64.44560323581534,
+        "sd_over_mean": 0.09687156078809062,
+        "limit": 0.25,
+        "mean_positive": true,
+        "finals": {
+          "0": 653.6257934570312,
+          "1": 607.43798828125,
+          "2": 734.7418823242188
+        },
+        "verdict": "跨种子稳定"
+      }
+    },
+    "r2dreamer": {
+      "c1": {
+        "ok": true,
+        "window": 102000.0,
+        "budget": 500000,
+        "n_seeds": 3,
+        "delta_mean": 421.1149348503018,
+        "se": 63.187993947929584,
+        "two_se": 126.37598789585917,
+        "ratio_delta_over_se": 6.664477039694026,
+        "per_seed": [
+          {
+            "seed": 0,
+            "mean_first": 154.75082398273727,
+            "mean_last": 480.2439991344105,
+            "delta": 325.4931751516732,
+            "n_first": 11,
+            "n_last": 11
+          },
+          {
+            "seed": 1,
+            "mean_first": 125.7928831416827,
+            "mean_last": 666.2765558416194,
+            "delta": 540.4836726999367,
+            "n_first": 13,
+            "n_last": 11
+          },
+          {
+            "seed": 2,
+            "mean_first": 218.20733016593888,
+            "mean_last": 615.5752868652344,
+            "delta": 397.3679566992955,
+            "n_first": 11,
+            "n_last": 11
+          }
+        ],
+        "verdict": "曲线确实在学"
+      },
+      "c2": {
+        "ok": true,
+        "n": 3,
+        "mean": 663.4986368815104,
+        "sd": 15.560163551538642,
+        "sd_over_mean": 0.0234516888002551,
+        "limit": 0.25,
+        "mean_positive": true,
+        "finals": {
+          "0": 676.8005981445312,
+          "1": 667.3076782226562,
+          "2": 646.3876342773438
+        },
+        "verdict": "跨种子稳定"
+      }
+    },
+    "c3": {
+      "ok": false,
+      "arm_a": "dreamer",
+      "arm_b": "r2dreamer",
+      "n_a": 3,
+      "n_b": 3,
+      "mean_a": 665.2685546875,
+      "mean_b": 663.4986368815104,
+      "sd_a": 64.44560323581534,
+      "sd_b": 15.560163551538642,
+      "delta": 1.7699178059896212,
+      "se": 38.276861880160986,
+      "two_se": 76.55372376032197,
+      "ratio_abs_delta_over_se": 0.04623988799110449,
+      "verdict": "未区分"
+    }
+  }
+}

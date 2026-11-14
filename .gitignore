@@ -1,0 +1,15 @@
+﻿# logs and checkpoints are never committed
+logdir/
+logdir_*/
+*.tfevents.*
+*.pt
+*.pth
+*.ckpt
+__pycache__/
+*.pyc
+
+# local scratch
+_gh_repo/
+*_aborted_*/
+*.log
+!scripts/*.log

@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "=== train.py ==="
+pgrep -af "train\.py" | head -5 || echo "(无)"
+echo "=== 驱动脚本 ==="
+pgrep -af "wsl_night\.sh" | head -3 || echo "(night 已停)"
+pgrep -af "wsl_A_split\.sh" | head -3 || echo "(A_split 已停)"
+echo "=== 是否已建 2e4 / cheetah logdir ==="
+ls -d /root/r2d/logdir_2e4wsl 2>/dev/null || echo "(logdir_2e4wsl 未创建)"
+ls -d /root/r2d/logdir_cheetah 2>/dev/null || echo "(logdir_cheetah 未创建)"
+ls -d /root/r2d/logdir_smoke_cheetah 2>/dev/null || echo "(logdir_smoke_cheetah 未创建)"
+echo "=== 最近的 night 日志行 ==="
+tail -4 "/mnt/c/Users/10348/Desktop/工作/DreamerV3复现/进展.md"
